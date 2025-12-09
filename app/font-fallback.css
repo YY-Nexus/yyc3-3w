@@ -1,0 +1,44 @@
+/* 字体回退策略 */
+@layer base {
+  /* 确保所有文本元素都有合适的字体回退 */
+  * {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  /* 标题字体优化 */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+
+  /* 正文字体优化 */
+  p,
+  span,
+  div {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 400;
+  }
+
+  /* 按钮和交互元素字体 */
+  button,
+  input,
+  select,
+  textarea {
+    font-family: inherit;
+  }
+}
+
+/* 字体加载优化 */
+@supports (font-display: swap) {
+  @font-face {
+    font-family: "SystemFallback";
+    src: local("system-ui"), local("-apple-system"), local("BlinkMacSystemFont");
+    font-display: swap;
+  }
+}
